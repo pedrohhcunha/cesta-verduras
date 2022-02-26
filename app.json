@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "cesta-verduras",
+    "slug": "cesta-verduras",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
