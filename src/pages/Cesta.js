@@ -5,21 +5,23 @@ import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
 import topo from '../assets/topo.png'
 import logo from '../assets/logo.png'
 
+import Texto from '../components/Texto';
+
 const width = Dimensions.get('screen').width
 
 export default function Cesta(props) {
     return(
         <>
             <Image style={styles.topImage} source={topo} />
-            <Text style={styles.pageTitle}>Detalhes da cesta:</Text>
+            <Texto style={styles.pageTitle}>Detalhes da cesta:</Texto>
             <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Cesta de verduras</Text>
+                <Texto style={styles.sectionTitle}>Cesta de verduras</Texto>
                 <View style={styles.productorView}>
                     <Image style={styles.logoImage} source={logo} />
-                    <Text style={styles.sectionProductor}>PH Farm</Text>
+                    <Texto style={styles.sectionProductor}>PH Farm</Texto>
                 </View>
-                <Text style={styles.sectionDetails}>Uma cesta com produtos selecionados cuidadosamente para você e sua familia.</Text>
-                <Text style={styles.sectionPrice}>R$ 23,90</Text>
+                <Texto style={styles.sectionDetails}>Uma cesta com produtos selecionados cuidadosamente para você e sua familia.</Texto>
+                <Texto style={styles.sectionPrice}>R$ 23,90</Texto>
             </View>
         </>
     )
@@ -47,13 +49,11 @@ const styles = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         color: '#464646',
-        fontFamily: 'MontserratBold'
     },
     productorView: {
         flexDirection: 'row',
         paddingVertical: 12,
         alignItems: 'center',
-        fontFamily: 'MontserratRegural'
     },
     logoImage: {
         width: 50,
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: "#A3A3A3",
         lineHeight: 26,
-        fontFamily: 'MontserratRegural'
     },
     sectionPrice: {
         fontWeight: 'bold',
@@ -76,6 +75,5 @@ const styles = StyleSheet.create({
         lineHeight: 42,
         color: '#2A9F85',
         marginTop: 8,
-        fontFamily: 'MontserratBold'
     }
 })

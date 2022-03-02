@@ -4,7 +4,7 @@ import Cesta from './src/pages/Cesta';
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 export default function App() {
   const [fonteCarregda] = useFonts({
-    "MontserratRegural": Montserrat_400Regular,
+    "MontserratRegular": Montserrat_400Regular,
     "MontserratBold": Montserrat_700Bold
   })
 
