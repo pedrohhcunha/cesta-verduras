@@ -41,18 +41,19 @@ const styles = StyleSheet.create({
     },
     section: {
         paddingVertical: 8,
-        paddingHorizontal: 16 
+        paddingHorizontal: 16,
     },  
     sectionTitle:{
         fontSize: 26,
         lineHeight: 42,
         color: '#464646',
-        fontWeight: 'bold'
+        fontFamily: 'MontserratBold'
     },
     productorView: {
         flexDirection: 'row',
         paddingVertical: 12,
-        alignItems: 'center'
+        alignItems: 'center',
+        fontFamily: 'MontserratRegural'
     },
     logoImage: {
         width: 50,
@@ -66,13 +67,15 @@ const styles = StyleSheet.create({
     sectionDetails: {
         fontSize: 16,
         color: "#A3A3A3",
-        lineHeight: 26
+        lineHeight: 26,
+        fontFamily: 'MontserratRegural'
     },
     sectionPrice: {
         fontWeight: 'bold',
         fontSize: 22,
         lineHeight: 42,
         color: '#2A9F85',
-        marginTop: 8
+        marginTop: 8,
+        fontFamily: 'MontserratBold'
     }
 })
