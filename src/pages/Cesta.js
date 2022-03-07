@@ -3,9 +3,10 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
 
 import topo from '../assets/topo.png'
-import logo from '../assets/logo.png'
 
 import Texto from '../components/Texto';
+
+import mock from '../mocks/cesta'
 
 const width = Dimensions.get('screen').width
 
@@ -13,15 +14,15 @@ export default function Cesta(props) {
     return(
         <>
             <Image style={styles.topImage} source={topo} />
-            <Texto style={styles.pageTitle}>Detalhes da cesta:</Texto>
+            <Texto style={styles.pageTitle}>{mock.topo.titulo}</Texto>
             <View style={styles.section}>
-                <Texto style={styles.sectionTitle}>Cesta de verduras</Texto>
+                <Texto style={styles.sectionTitle}>{mock.detalhes.nome}</Texto>
                 <View style={styles.productorView}>
-                    <Image style={styles.logoImage} source={logo} />
-                    <Texto style={styles.sectionProductor}>PH Farm</Texto>
+                    <Image style={styles.logoImage} source={mock.detalhes.logoFazenda} />
+                    <Texto style={styles.sectionProductor}>{mock.detalhes.nomeFazenda}</Texto>
                 </View>
-                <Texto style={styles.sectionDetails}>Uma cesta com produtos selecionados cuidadosamente para você e sua familia.</Texto>
-                <Texto style={styles.sectionPrice}>R$ 23,90</Texto>
+                <Texto style={styles.sectionDetails}>{mock.detalhes.descricao}</Texto>
+                <Texto style={styles.sectionPrice}>{mock.detalhes.preco}</Texto>
             </View>
         </>
     )
