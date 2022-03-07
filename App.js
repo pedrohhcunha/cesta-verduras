@@ -1,7 +1,13 @@
 import React from 'react';
+
 import { StatusBar, SafeAreaView} from 'react-native';
+
 import Cesta from './src/pages/Cesta';
+
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
+
+import AppLoading from 'expo-app-loading'
+
 export default function App() {
   const [fonteCarregda] = useFonts({
     "MontserratRegular": Montserrat_400Regular,
@@ -9,7 +15,7 @@ export default function App() {
   })
 
   if(!fonteCarregda){
-    return <SafeAreaView />
+    return <AppLoading />
   }
   return (
     <SafeAreaView>
