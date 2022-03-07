@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native'
 
 import topo from '../assets/topo.png'
 
@@ -23,6 +23,9 @@ export default function Cesta(props) {
                 </View>
                 <Texto style={styles.sectionDetails}>{mock.detalhes.descricao}</Texto>
                 <Texto style={styles.sectionPrice}>{mock.detalhes.preco}</Texto>
+                <TouchableOpacity style={styles.botao}>
+                    <Texto style={styles.textBotao}>{mock.detalhes.botao}</Texto>
+                </TouchableOpacity>
             </View>
         </>
     )
@@ -76,5 +79,18 @@ const styles = StyleSheet.create({
         lineHeight: 42,
         color: '#2A9F85',
         marginTop: 8,
+    },
+    botao: {
+        marginTop: 16,
+        backgroundColor: '#2A9F85',
+        paddingVertical: 16,
+        borderRadius: 6
+    },
+    textBotao: {
+        textAlign: 'center',
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 26
     }
 })
