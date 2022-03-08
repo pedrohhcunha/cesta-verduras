@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView, FlatList } from 'react-native'
 
 import topo from '../assets/topo.png'
 
@@ -11,6 +11,13 @@ import mock from '../mocks/cesta'
 const width = Dimensions.get('screen').width
 
 export default function Cesta(props) {
+
+    const renderItem = ({item}) => (
+        <View style={styles.itemView} key={item.nome}>
+            <Image style={styles.itemImage} source={topo}/>
+            <Texto style={styles.itemText}>{item.nome}</Texto>    
+        </View>
+    )
     return(
         <ScrollView>
             <Image style={styles.topImage} source={topo} />
@@ -29,12 +36,11 @@ export default function Cesta(props) {
             </View>
             <View style={styles.items}>
                 <Texto style={styles.itemsTitle}>{mock.itens.titulo}</Texto>
-                {mock.itens.lista.map(item => (
-                    <View style={styles.itemView} key={item.nome}>
-                        <Image style={styles.itemImage} source={topo}/>
-                        <Texto style={styles.itemText}>{item.nome}</Texto>    
-                    </View>
-                ))}
+                <FlatList 
+                    data={mock.itens.lista}
+                    renderItem={renderItem}
+                    keyExtractor={({ nome }) => nome}
+                />
             </View>
         </ScrollView>
     )
