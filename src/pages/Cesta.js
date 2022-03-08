@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
 
 import topo from '../assets/topo.png'
 
@@ -12,7 +12,7 @@ const width = Dimensions.get('screen').width
 
 export default function Cesta(props) {
     return(
-        <>
+        <ScrollView>
             <Image style={styles.topImage} source={topo} />
             <Texto style={styles.pageTitle}>{mock.topo.titulo}</Texto>
             <View style={styles.section}>
@@ -27,7 +27,16 @@ export default function Cesta(props) {
                     <Texto style={styles.textBotao}>{mock.detalhes.botao}</Texto>
                 </TouchableOpacity>
             </View>
-        </>
+            <View style={styles.items}>
+                <Texto style={styles.itemsTitle}>{mock.itens.titulo}</Texto>
+                {mock.itens.lista.map(item => (
+                    <View style={styles.itemView} key={item.nome}>
+                        <Image style={styles.itemImage} source={topo}/>
+                        <Texto style={styles.itemText}>{item.nome}</Texto>    
+                    </View>
+                ))}
+            </View>
+        </ScrollView>
     )
 }
 
@@ -92,5 +101,34 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         lineHeight: 26
+    },
+    items: {
+        paddingHorizontal: 16,
+        paddingBottom: 16
+    },
+    itemsTitle: {
+        color: '#464646',
+        fontWeight: 'bold',
+        marginTop: 24,
+        marginBottom: 8,
+        fontSize: 20,
+        lineHeight: 32
+    },
+    itemView: {
+        flexDirection: 'row',
+        paddingVertical: 8,
+        alignItems: 'center',
+    },
+    itemImage: {
+        width: 70,
+        height: 70,
+        borderRadius: 6,
+        marginRight: 10
+    },
+    itemText: {
+        fontSize: 16,
+        lineHeight: 26,
+        color: '#464646'
     }
+
 })
